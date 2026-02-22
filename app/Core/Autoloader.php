@@ -1,6 +1,6 @@
 <?php
 namespace App\Core;
-
+//autoloader
 class Autoloader {
     static function register() {
         // Cette fonction de PHP va s'exécuter dès qu'on essaie
