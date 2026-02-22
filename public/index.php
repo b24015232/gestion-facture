@@ -14,3 +14,4 @@ $uri = $_SERVER['REQUEST_URI'];
 $basePath = "/public/";
 
 echo "test";
+echo "test2";
