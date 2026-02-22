@@ -12,3 +12,5 @@ $uri = $_SERVER['REQUEST_URI'];
 
 // On cherche où se trouve le mot "public" pour ne prendre que ce qui est APRES
 $basePath = "/public/";
+
+echo "test";
