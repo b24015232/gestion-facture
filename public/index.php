@@ -2,7 +2,7 @@
 
 define('ROOT', dirname(__DIR__));
 
-require_once ROOT . '/app/core/Autoloader.php';
+require_once ROOT . '/app/Core/Autoloader.php';
 \App\Core\Autoloader::register();
 
 use App\Core\Router;
