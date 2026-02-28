@@ -13,7 +13,7 @@
         <p>Bonjour <strong><?= $nom ?></strong>, bienvenue sur ta première vue MVC !</p>
         
         <p style="color: green;">Si tu vois ce texte formaté, c'est que le Controller a réussi à envoyer les données au fichier HTML.</p>
-        
+
     </div>
 </body>
 </html>
