@@ -1,0 +1,16 @@
+# 1. On active le moteur de réécriture d'URL
+RewriteEngine On
+
+# 2. Sécurité : On définit la base (souvent la racine du dossier public)
+RewriteBase /
+
+# 3. CONDITION : Si l'utilisateur demande un FICHIER qui existe (ex: style.css, logo.png)
+# On ne fait rien
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# 4. CONDITION : Si l'utilisateur demande un DOSSIER qui existe
+# On ne fait rien non plus
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# 5. RÈGLE : Pour tout le reste, on envoie vers index.php
+RewriteRule ^(.*)$ index.php [QSA,L]

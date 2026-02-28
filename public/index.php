@@ -1,18 +1,14 @@
 <?php
-use App\Core\Autoloader;
+
+define('ROOT', dirname(__DIR__));
+
+require_once ROOT . '/app/Core/Autoload.php';
+
 use App\Core\Router;
 use App\Models\Facture;
 
-// 1. Chargement du moteur
-require_once '../app/Core/Autoloader.php';
-Autoloader::register();
+session_start();
 
-// 2. Analyse de l'URL sans dépendre du .htaccess
-// On récupère l'URI (ex: /projet/public/main/contact)
-$uri = $_SERVER['REQUEST_URI'];
+$router = new Router();
+$router->run();
 
-// On cherche où se trouve le mot "public" pour ne prendre que ce qui est APRES
-$basePath = "/public/";
-$facture = new Facture();
-$facture->direBonjour();
-echo "le site est hébergé";
