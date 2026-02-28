@@ -2,7 +2,8 @@
 
 define('ROOT', dirname(__DIR__));
 
-require_once ROOT . '/app/core/Autoload.php';
+require_once ROOT . '/app/core/Autoloader.php';
+\App\Core\Autoloader::register();
 
 use App\Core\Router;
 use App\Models\Facture;
