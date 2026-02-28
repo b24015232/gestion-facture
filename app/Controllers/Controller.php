@@ -12,7 +12,7 @@ abstract class Controller {
         extract($data);
 
         // On construit le chemin absolu vers le fichier de vue
-        $cheminVue = ROOT . '/app/Views/' . $fichier . '.php';
+        $cheminVue = ROOT . '/app/Views/' . $fichier . '.view.php';
 
         if (file_exists($cheminVue)) {
             require_once $cheminVue;
