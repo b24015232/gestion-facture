@@ -3,20 +3,23 @@ namespace App\Controllers;
 
 class TestController {
 
-    /**
-     * Cette méthode sera appelée par /test ou /test/index
-     */
     public function index() {
-        echo "<h1>Bravo !</h1>";
-        echo "<p>Si tu vois ce message, c'est que ton Routeur fonctionne parfaitement.</p>";
-    }
+        // 1. On prépare les données à envoyer au HTML
+        $data = [
+            'titre' => "Ma Super Page de Test",
+            'nom'   => "Administrateur"
+        ];
 
-    /**
-     * Cette méthode sera appelée par /test/bonjour/ton_nom
-     * Le paramètre $nom est récupéré automatiquement par le Routeur !
-     */
-    public function bonjour(string $nom = 'Inconnu') {
-        echo "<h1>Salut " . htmlspecialchars($nom) . " !</h1>";
-        echo "<p>Le routeur a réussi à passer ton nom en paramètre à la fonction.</p>";
+        // 2. La magie de PHP : on extrait les variables
+        extract($data);
+
+        // 3. On va chercher le fichier HTML directement
+        $cheminVue = ROOT . '/app/Views/test.view.php';
+
+        if (file_exists($cheminVue)) {
+            require_once $cheminVue;
+        } else {
+            echo "Erreur : Le fichier de vue introuvable dans " . $cheminVue;
+        }
     }
 }
