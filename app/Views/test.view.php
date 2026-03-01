@@ -1,19 +1,17 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $titre ?></title>
-</head>
-<body>
-    <div style="text-align: center; margin-top: 50px; font-family: sans-serif;">
-        
-        <h1><?= $titre ?></h1>
-        
-        <p>Bonjour <strong><?= $nom ?></strong>, bienvenue sur ta première vue MVC !</p>
-        
-        <p style="color: green;">Si tu vois ce texte formaté, c'est que le Controller a réussi à envoyer les données au fichier HTML.</p>
-
+<div class="test-container">
+    
+    <h1><?= $titre ?? 'Page de Test' ?></h1>
+    
+    <div class="carte-bienvenue">
+        <p>Bonjour <strong><?= $nom ?? 'Visiteur' ?></strong> !</p>
+        <p>Ce texte représente le contenu spécifique de ma vue.</p>
     </div>
-</body>
-</html>
+
+    <ul>
+        <li>Étape 1 : Le Controller appelle cette vue.</li>
+        <li>Étape 2 : ob_start() aspire tout ce code HTML.</li>
+        <li>Étape 3 : Ce code est stocké dans la variable $contenu.</li>
+        <li>Étape 4 : Le layout l'affiche au milieu de la page !</li>
+    </ul>
+
+</div>
