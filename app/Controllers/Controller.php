@@ -9,16 +9,7 @@ abstract class Controller {
      * @param array $data Les données à envoyer (ex: ['titre' => 'Accueil'])
      */
     protected function render(string $fichier, array $data = []) {
-        extract($data);
-
-        // On construit le chemin absolu vers le fichier de vue
-        $cheminVue = ROOT . '/app/Views/' . $fichier . '.view.php';
-
-        if (file_exists($cheminVue)) {
-            require_once $cheminVue;
-        } else {
-            die("Erreur : Le fichier de vue <strong>{$fichier}.php</strong> est introuvable.");
-        }
+        View::render($fichier, $data);
     }
 
     /**
