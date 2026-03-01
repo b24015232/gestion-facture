@@ -16,7 +16,7 @@ class View {
         ob_start();
 
         // On inclut la vue spécifique (qui va utiliser les variables)
-        $cheminVue = ROOT . '/app/Views/' . $fichier . '.php';
+        $cheminVue = ROOT . '/app/Views/' . $fichier . '.view.php';
         if (file_exists($cheminVue)) {
             require $cheminVue;
         } else {
