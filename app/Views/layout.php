@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <?php require_once ROOT . '/app/Views/includes/nav.php'; ?>
+    <?php require_once ROOT . '/app/Views/includes/header.php'; ?>
 
     <main class="container">
         <?= $contenu ?>
