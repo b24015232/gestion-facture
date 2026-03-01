@@ -5,10 +5,20 @@ namespace App\Controllers;
 class TestController extends Controller {
 
     public function index() {
-        // 2. On utilise l'outil render() qui appartient au parent ($this)
+        // On demande l'affichage de la vue et on lui glisse les fichiers CSS et JS !
         $this->render('test', [
-            'titre' => "Ma superbe page de test qu'Ilian le plus beau des développeurs a créée",
-            'nom'   => "Le plus beau des développeurs"
+            'titre' => 'Page de Test avec JS',
+            'nom'   => 'Administrateur',
+            
+            // On ajoute le CSS spécifique à cette page
+            'css'   => [
+                '/css/test.css',
+            ],
+            
+            // On ajoute le JS spécifique
+            'js'    => [
+                '/js/test.js'
+            ]
         ]);
     }
 
